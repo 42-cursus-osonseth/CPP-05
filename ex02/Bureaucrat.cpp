@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "LowException.hpp"
 #include "HighException.hpp"
 
@@ -40,7 +40,7 @@ void Bureaucrat::GradeTooLowException()
 {
     throw LowException("Bureaucrat :");
 }
-void Bureaucrat::signForm(Form const &f) const
+void Bureaucrat::signForm(AForm const &f) const
 {
     if (f.getSigned())
     {
@@ -68,7 +68,7 @@ void Bureaucrat::signForm(Form const &f) const
             << RED " has a grade sign too low !" << RESET << std::endl;
     }
 }
-void Bureaucrat::executeForm(Form const & form) const
+void Bureaucrat::executeForm(AForm const & form) const
 {
     if (grade <= form.getExecGrade() && form.getSigned())
     {

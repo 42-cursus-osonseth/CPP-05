@@ -8,7 +8,7 @@
 #include <fstream>
 #include "Colors.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 private:
@@ -27,8 +27,8 @@ public:
     int getGrade() const;
     void increaseGrade();
     void decreaseGrade();
-    void signForm(Form const &f) const;
-    void executeForm(Form const &form) const;
+    void signForm(AForm const &f) const;
+    void executeForm(AForm const &form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);

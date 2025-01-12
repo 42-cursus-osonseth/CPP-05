@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 
@@ -9,12 +9,13 @@ int main()
      
       
       Bureaucrat max ("Max", 4);
-      PresidentialPardonForm a("BOOM");
-      max.signForm(a);
-      a.beSigned(max);
+      AForm *a = new PresidentialPardonForm("BOOOUUUMM");
+      max.signForm(*a);
+      a->beSigned(max);
       std::cout << std::string(20, '-') << std::endl;
-      max.signForm(a);
-      max.executeForm(a);
+      max.signForm(*a);
+      max.executeForm(*a);
+      delete a;
       
     }
     catch (const std::exception &e)

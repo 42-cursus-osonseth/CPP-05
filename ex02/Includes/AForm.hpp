@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <string>
 #include <exception>
@@ -9,7 +9,7 @@
 #include "Colors.hpp"
 
 class Bureaucrat;
-class Form
+class AForm
 {
 private:
 
@@ -22,11 +22,11 @@ private:
     void GradeTooLowException();
 
 public:
-    Form();
-    Form(std::string target, std::string name, int signGrade, int execGrade);
-    Form(Form const &other);
-    Form &operator=(Form const &other);
-    virtual ~Form();
+    AForm();
+    AForm(std::string target, std::string name, int signGrade, int execGrade);
+    AForm(AForm const &other);
+    AForm &operator=(AForm const &other);
+    virtual ~AForm();
 
     const std::string &getName() const;
     const std::string &getTarget() const;
@@ -38,6 +38,6 @@ public:
     virtual void action () const = 0;
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &f);
+std::ostream &operator<<(std::ostream &os, const AForm &f);
 
 #endif
