@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
         GradeTooLowException();
 }
 
-std::string Bureaucrat::getName() const { return name; }
+const std::string Bureaucrat::getName() const { return name; }
 int Bureaucrat::getGrade() const { return grade; }
 void Bureaucrat::increaseGrade()
 {
@@ -26,11 +26,11 @@ void Bureaucrat::decreaseGrade()
 }
 void Bureaucrat::GradeTooHighException()
 {
-    throw std::runtime_error("The Grade is too HIGHT !");
+    throw std::runtime_error("Bureaucrat Grade is too HIGHT !");
 }
 void Bureaucrat::GradeTooLowException()
 {
-    throw std::runtime_error("The grade is too LOW");
+    throw std::runtime_error("Bureaucrat grade is too LOW");
 }
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {

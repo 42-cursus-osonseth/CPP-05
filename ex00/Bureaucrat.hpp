@@ -20,7 +20,7 @@ public:
     Bureaucrat();
     Bureaucrat(std::string name, int grade);
     ~Bureaucrat();
-    std::string getName() const;
+    const std::string getName() const;
     int getGrade() const;
     void increaseGrade();
     void decreaseGrade();
