@@ -4,9 +4,10 @@ int main()
 {
     try
     {
-        Bureaucrat a("Max", 1);
+        Bureaucrat a("Max", 150);
         std::cout << a << std::endl;
-        a.increaseGrade();
+        a.decreaseGrade();
+        std::cout << a << std::endl;
     }
     catch (const std::exception &e)
     {

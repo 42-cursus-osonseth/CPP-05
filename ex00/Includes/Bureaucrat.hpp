@@ -8,6 +8,7 @@
 #include <fstream>
 #include "Colors.hpp"
 
+
 class Bureaucrat
 {
 private:
