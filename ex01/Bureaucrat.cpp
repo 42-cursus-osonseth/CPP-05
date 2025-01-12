@@ -27,14 +27,7 @@ void Bureaucrat::decreaseGrade()
     if (grade > 150)
         GradeTooLowException();
 }
-const char *LowException::what() const throw()
-{
-    return Error.c_str();
-}
-const char *HighException::what() const throw()
-{
-    return Error.c_str();
-}
+
 void Bureaucrat::GradeTooHighException()
 {
     throw HighException("Bureaucrat :");

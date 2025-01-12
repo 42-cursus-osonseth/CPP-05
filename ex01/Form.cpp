@@ -1,5 +1,8 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "LowException.hpp"
+#include "HighException.hpp"
+
 
 Form::Form() {}
 Form::~Form() {}
@@ -18,11 +21,11 @@ bool Form::getSigned() const { return _signed; }
 
 void Form::GradeTooHighException()
 {
-    throw std::runtime_error("Form Grade is too HIGHT !");
+    throw HighException("Form :");
 }
 void Form::GradeTooLowException()
 {
-    throw std::runtime_error("Form grade is too LOW");
+    throw LowException("Form :");
 }
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {

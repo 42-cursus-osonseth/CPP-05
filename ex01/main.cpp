@@ -5,8 +5,8 @@ int main()
 {
     try
     {
-      Form a ("test", 150, 134);
-      Bureaucrat max ("Max", 151);
+      Form a ("test", 0, 134);
+      Bureaucrat max ("Max", 150);
       a.beSigned(max);
     }
     catch (const std::exception &e)

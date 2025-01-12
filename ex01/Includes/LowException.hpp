@@ -3,6 +3,7 @@
 
 #include <exception>
 #include <string>
+#include "Colors.hpp"
 
 class LowException : public std::exception
 {
@@ -13,7 +14,7 @@ public:
     LowException() {}
     ~LowException() throw() {}
     LowException(std::string str) : Error( YELLOW + str + RESET + RED " grade is too low !" + RESET) {}
-    virtual const char *what() const throw();
+    const char *what() const throw();
 };
 
 #endif
