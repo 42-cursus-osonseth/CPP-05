@@ -3,7 +3,7 @@ CC				= c++
 CFLAGS 			= -Wall -Wextra -Werror -g -std=c++98
 #-fno-elide-constructors
 
-INCLUDEPATH		= ./
+INCLUDEPATH		= ./Includes
 
 SRCPATH 		= ./
 

@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "LowException.hpp"
+#include "HighException.hpp"
 
 Bureaucrat::Bureaucrat() {}
 Bureaucrat::~Bureaucrat() {}
@@ -25,13 +27,21 @@ void Bureaucrat::decreaseGrade()
     if (grade > 150)
         GradeTooLowException();
 }
+const char *LowException::what() const throw()
+{
+    return Error.c_str();
+}
+const char *HighException::what() const throw()
+{
+    return Error.c_str();
+}
 void Bureaucrat::GradeTooHighException()
 {
-    throw std::runtime_error("Bureaucrat Grade is too HIGHT !");
+    throw HighException("Bureaucrat :");
 }
 void Bureaucrat::GradeTooLowException()
 {
-    throw std::runtime_error("Bureaucrat grade is too LOW");
+    throw LowException("Bureaucrat :");
 }
 void Bureaucrat::signForm(Form const &f) const
 {
