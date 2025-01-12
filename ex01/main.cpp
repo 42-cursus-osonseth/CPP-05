@@ -6,7 +6,7 @@ int main()
     try
     {
       Form a ("test", 100, 134);
-      Bureaucrat max ("Max", 101);
+      Bureaucrat max ("Max", 150);
       a.beSigned(max);
     }
     catch (const std::exception &e)

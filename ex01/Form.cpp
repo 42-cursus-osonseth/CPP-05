@@ -18,11 +18,11 @@ bool Form::getSigned() const { return _signed; }
 
 void Form::GradeTooHighException()
 {
-    throw std::runtime_error("The Grade is too HIGHT !");
+    throw std::runtime_error("Form Grade is too HIGHT !");
 }
 void Form::GradeTooLowException()
 {
-    throw std::runtime_error("The grade is too LOW");
+    throw std::runtime_error("Form grade is too LOW");
 }
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {

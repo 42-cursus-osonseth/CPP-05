@@ -27,11 +27,11 @@ void Bureaucrat::decreaseGrade()
 }
 void Bureaucrat::GradeTooHighException()
 {
-    throw std::runtime_error("The Grade is too HIGHT !");
+    throw std::runtime_error("Bureaucrat Grade is too HIGHT !");
 }
 void Bureaucrat::GradeTooLowException()
 {
-    throw std::runtime_error("The grade is too LOW");
+    throw std::runtime_error("Bureaucrat grade is too LOW");
 }
 void Bureaucrat::signForm(Form const &f) const
 {
