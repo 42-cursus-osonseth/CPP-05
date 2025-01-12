@@ -12,6 +12,10 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
     if (grade > 150)
         GradeTooLowException();
 }
+Bureaucrat:: Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
+{
+
+}
 
 std::string Bureaucrat::getName() const { return name; }
 int Bureaucrat::getGrade() const { return grade; }

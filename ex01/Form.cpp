@@ -4,7 +4,7 @@
 #include "HighException.hpp"
 
 
-Form::Form() {}
+Form::Form() : signGrade(0), execGrade(0) {}
 Form::~Form() {}
 Form::Form(std::string n, int sG, int eG) : name(n), signGrade(sG), execGrade(eG), _signed(false)
 {
@@ -12,6 +12,10 @@ Form::Form(std::string n, int sG, int eG) : name(n), signGrade(sG), execGrade(eG
         GradeTooHighException();
     if (signGrade > 150 || execGrade > 150)
         GradeTooLowException();
+}
+Form:: Form(Form const &other) : name(other.name), signGrade(other.signGrade), execGrade(other.execGrade), _signed(other._signed)
+{
+
 }
 
 int Form::getSignGrade() const { return signGrade; }

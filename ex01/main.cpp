@@ -5,9 +5,12 @@ int main()
 {
     try
     {
-      Form a ("test", 0, 134);
-      Bureaucrat max ("Max", 150);
+      Form a ("test", 100, 134);
+      Form b = a;
+      Bureaucrat max ("Max", 100);
       a.beSigned(max);
+      std::cout << std::string(20, '-') << std::endl;
+      std::cout << b << std::endl;
     }
     catch (const std::exception &e)
     {
