@@ -10,7 +10,7 @@ OBJDIR 			= ./obj/
 
 DEPDIR 			= ./dep/
 
-SRCName			= main.cpp Bureaucrat.cpp
+SRCName			= main.cpp Bureaucrat.cpp Exception.cpp
 
 SRCS = $(addprefix $(SRCPATH), $(SRCName))
 
