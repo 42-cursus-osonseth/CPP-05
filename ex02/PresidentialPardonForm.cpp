@@ -19,5 +19,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 void PresidentialPardonForm::action() const
 {
 
-    std::cout << RED << getTarget() << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
+    std::cout << RED << getTarget() << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl << std::endl;
 }
