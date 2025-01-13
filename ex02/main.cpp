@@ -2,6 +2,7 @@
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
@@ -9,16 +10,14 @@ int main()
   {
     Bureaucrat max("Max", 100);
     Bureaucrat tonton("tonton", 5);
-    AForm *a = new PresidentialPardonForm("test");
-    AForm *b = new ShrubberyCreationForm("tree");
+    AForm *a = new RobotomyRequestForm("test");
+    
 
     tonton.signForm(*a);
     tonton.executeForm(*a);
-    tonton.signForm(*b);
-    tonton.executeForm(*b);
+
 
     delete a;
-    delete b;
   }
   catch (const std::exception &e)
   {

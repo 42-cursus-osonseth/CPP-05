@@ -6,6 +6,8 @@
 #include <stdexcept>
 #include <iostream>
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
 #include "Colors.hpp"
 
 class Bureaucrat;
