@@ -1,11 +1,11 @@
-#include "HighException.hpp"
-#include "LowException.hpp"
+#include "Bureaucrat.hpp"
 
-const char *LowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return Error.c_str();
+    return ("Bureaucrat has too low grade ... !");
 }
-const char *HighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return Error.c_str();
+    return ("Bureaucrat has too hight grade ... !");
 }
+

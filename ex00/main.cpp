@@ -4,11 +4,10 @@ int main()
 {
     try
     {
-        Bureaucrat a("Max", 150);
+        Bureaucrat a("Max", 69);
         Bureaucrat b = a;
-        std::cout << a << std::endl;
-      
         std::cout << b << std::endl;
+       
     }
     catch (const std::exception &e)
     {
