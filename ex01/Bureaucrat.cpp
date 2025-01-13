@@ -1,16 +1,14 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "LowException.hpp"
-#include "HighException.hpp"
 
 Bureaucrat::Bureaucrat() {}
 Bureaucrat::~Bureaucrat() {}
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     if (grade < 1)
-        GradeTooHighException();
+        throw GradeTooHighException();
     if (grade > 150)
-        GradeTooLowException();
+        throw GradeTooLowException();
 }
 Bureaucrat:: Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
 {
@@ -23,23 +21,15 @@ void Bureaucrat::increaseGrade()
 {
     grade--;
     if (grade < 1)
-        GradeTooHighException();
+       throw  GradeTooHighException();
 }
 void Bureaucrat::decreaseGrade()
 {
     grade++;
     if (grade > 150)
-        GradeTooLowException();
+        throw GradeTooLowException();
 }
 
-void Bureaucrat::GradeTooHighException()
-{
-    throw HighException("Bureaucrat :");
-}
-void Bureaucrat::GradeTooLowException()
-{
-    throw LowException("Bureaucrat :");
-}
 void Bureaucrat::signForm(Form const &f) const
 {
     if (f.getSigned())

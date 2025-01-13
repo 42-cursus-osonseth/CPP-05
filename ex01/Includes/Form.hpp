@@ -16,9 +16,6 @@ private:
     const int signGrade;
     const int execGrade;
     bool _signed;
-    void GradeTooHighException();
-    void GradeTooLowException();
-
 public:
     Form();
     Form(std::string name, int signGrade, int execGrade);
@@ -31,6 +28,12 @@ public:
     int getExecGrade() const;
     bool getSigned() const;
     void beSigned(Bureaucrat const &bureaucrat);
+    class GradeTooHighException : public std::exception{
+        const char *what() const throw();
+    };
+    class GradeTooLowException : public std::exception{
+        const char *what() const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &f);
