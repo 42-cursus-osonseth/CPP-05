@@ -14,9 +14,6 @@ class Bureaucrat
 private:
     std::string const name;
     int grade;
-    void GradeTooHighException();
-    void GradeTooLowException();
-
 public:
     Bureaucrat();
     Bureaucrat(std::string name, int grade);
@@ -27,8 +24,13 @@ public:
     int getGrade() const;
     void increaseGrade();
     void decreaseGrade();
-    void signForm(AForm const &f) const;
-    void executeForm(AForm const &form) const;
+    void signForm(AForm &f);
+    class GradeTooHighException : public std::exception{
+        const char *what() const throw();
+    };
+    class GradeTooLowException : public std::exception{
+        const char *what() const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);

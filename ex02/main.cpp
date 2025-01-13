@@ -1,27 +1,22 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    try
-    {
-     
-      
-      Bureaucrat max ("Max", 4);
-      AForm *a = new PresidentialPardonForm("BOOOUUUMM");
-      max.signForm(*a);
-      a->beSigned(max);
-      std::cout << std::string(20, '-') << std::endl;
-      max.signForm(*a);
-      max.executeForm(*a);
-      delete a;
-      
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+  try
+  {
 
-    return 0;
+    AForm a ("test", 100 , 100);
+    Bureaucrat max("Max", 101);
+    Bureaucrat tonton("tonton", 100);
+    max.signForm(a);
+    tonton.signForm(a);
+    tonton.signForm(a);
+  }
+  catch (const std::exception &e)
+  {
+    std::cerr << MAGENTA << e.what() << RESET << std::endl;
+  }
+
+  return 0;
 }
