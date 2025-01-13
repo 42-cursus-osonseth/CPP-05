@@ -12,7 +12,8 @@ OBJDIR 			= ./obj/
 DEPDIR 			= ./dep/
 
 SRCName			= main.cpp Bureaucrat.cpp AForm.cpp Exception.cpp \
-				  PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+				  PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+				  Intern.cpp
 
 SRCS = $(addprefix $(SRCPATH), $(SRCName))
 
