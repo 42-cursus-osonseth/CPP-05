@@ -48,7 +48,7 @@ std::ostream &operator<<(std::ostream &os, const AForm &f)
         << YELLOW_ITALIC << "Sign grade : " << RESET
         << CYAN << f.getSignGrade() << RESET << std::endl
         << YELLOW_ITALIC << "Signed     : " << RESET
-        << RED << str << RESET;
+        << RED << str << RESET << std::endl;
 
     return os;
 }

@@ -10,6 +10,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(target,
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : AForm(other)
+{
+}
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
     AForm::execute(executor);

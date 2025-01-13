@@ -3,12 +3,16 @@
 RobotomyRequestForm::RobotomyRequestForm()
 {
 }
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(target, "presidential", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(target, "robotomy", 72, 45)
 {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+}
+RobotomyRequestForm::RobotomyRequestForm (RobotomyRequestForm const &other) : AForm(other)
+{
+
 }
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {

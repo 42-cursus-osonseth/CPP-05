@@ -6,6 +6,18 @@
 
 int main()
 {
+
+  {
+    PresidentialPardonForm a ("max");
+    RobotomyRequestForm b ("trent");
+    ShrubberyCreationForm c ("boum");
+
+    PresidentialPardonForm d = a;
+    RobotomyRequestForm e = b;
+    ShrubberyCreationForm f = c;
+
+    std::cout << d << e << f << std::endl;
+  }
   try
   {
     Bureaucrat max("Max", 100);
