@@ -10,14 +10,14 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(targe
 PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
-void PresidentialPardonForm::execute(Bureaucrat const &executor) 
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-   AForm::execute(executor);
-   action();
+    AForm::execute(executor);
+    action();
 }
 
-void PresidentialPardonForm::action () const
+void PresidentialPardonForm::action() const
 {
 
-    std::cout << RED << getTarget() <<  " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
+    std::cout << RED << getTarget() << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
 }

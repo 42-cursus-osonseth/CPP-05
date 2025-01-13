@@ -37,4 +37,5 @@ void ShrubberyCreationForm::action() const
         << "       |||||" << std::endl
         << "       |||||" << std::endl
         << "       |||||" << std::endl;
+    file.close();
 }

@@ -21,4 +21,8 @@ const char *AForm::alreadySignedException::what() const throw()
 {
     return ("Form is already signed ... !");
 }
+const char *AForm::notSignedException::what() const throw()
+{
+    return ("Form is not signed ... !");
+}
 

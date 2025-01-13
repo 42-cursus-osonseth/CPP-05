@@ -31,7 +31,6 @@ void Bureaucrat::decreaseGrade()
 
 void Bureaucrat::signForm(AForm &f)
 {
-
     try
     {
         f.beSigned(*this);
@@ -48,6 +47,28 @@ void Bureaucrat::signForm(AForm &f)
             << RED << " couldn't sign " << RESET << std::endl
             << YELLOW << std::string(18, '-') << RESET << std::endl
             << f << std::endl
+            << RED << "because " << RESET
+            << MAGENTA << e.what() << RESET << std::endl << std::endl;
+    }
+}
+void Bureaucrat::executeForm(AForm const &form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout
+            << BLUE << name << RESET
+            << GREEN << "      executed " << RESET << std::endl
+            << YELLOW << std::string(18, '-') << RESET << std::endl
+            << form << std::endl << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout
+            << BLUE << name << RESET
+            << RED << " couldn't execute " << RESET << std::endl
+            << YELLOW << std::string(18, '-') << RESET << std::endl
+            << form << std::endl
             << RED << "because " << RESET
             << MAGENTA << e.what() << RESET << std::endl << std::endl;
     }
