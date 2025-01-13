@@ -6,13 +6,12 @@ Bureaucrat::~Bureaucrat() {}
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     if (grade < 1)
-        throw GradeTooHighException();
+        throw Bureaucrat::GradeTooHighException();
     if (grade > 150)
-        throw GradeTooLowException();
+        throw Bureaucrat::GradeTooLowException();
 }
-Bureaucrat:: Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
+Bureaucrat::Bureaucrat(Bureaucrat const &other) : name(other.name), grade(other.grade)
 {
-
 }
 
 std::string Bureaucrat::getName() const { return name; }
@@ -21,35 +20,36 @@ void Bureaucrat::increaseGrade()
 {
     grade--;
     if (grade < 1)
-       throw  GradeTooHighException();
+        throw Bureaucrat::GradeTooHighException();
 }
 void Bureaucrat::decreaseGrade()
 {
     grade++;
     if (grade > 150)
-        throw GradeTooLowException();
+        throw Bureaucrat::GradeTooLowException();
 }
 
-void Bureaucrat::signForm(Form const &f) const
+void Bureaucrat::signForm(Form &f)
 {
-    if (f.getSigned())
+
+    try
     {
+        f.beSigned(*this);
         std::cout
             << BLUE << name << RESET
-            << GREEN "      signed " << RESET << std::endl
+            << GREEN << "      signed " << RESET << std::endl
             << YELLOW << std::string(18, '-') << RESET << std::endl
-            << f << std::endl;
+            << f << std::endl << std::endl;
     }
-    else
+    catch (std::exception &e)
     {
         std::cout
             << BLUE << name << RESET
-            << RED " couldn't sign : " << RESET << std::endl
+            << RED << " couldn't sign " << RESET << std::endl
             << YELLOW << std::string(18, '-') << RESET << std::endl
             << f << std::endl
-            << YELLOW "because " << RESET
-            << BLUE << name << RESET
-            << YELLOW " has a grade sign too low !" << RESET << std::endl;
+            << RED << "because " << RESET
+            << MAGENTA << e.what() << RESET << std::endl << std::endl;
     }
 }
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)

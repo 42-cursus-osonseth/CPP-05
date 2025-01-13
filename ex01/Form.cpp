@@ -1,7 +1,5 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-#include "LowException.hpp"
-#include "HighException.hpp"
 
 
 Form::Form() : signGrade(0), execGrade(0) {}
@@ -9,9 +7,9 @@ Form::~Form() {}
 Form::Form(std::string n, int sG, int eG) : name(n), signGrade(sG), execGrade(eG), _signed(false)
 {
     if (signGrade < 1 || execGrade < 1)
-        throw GradeTooHighException();
+        throw Form::GradeTooHighException();
     if (signGrade > 150 || execGrade > 150)
-        throw GradeTooLowException();
+        throw Form::GradeTooLowException();
 }
 Form:: Form(Form const &other) : name(other.name), signGrade(other.signGrade), execGrade(other.execGrade), _signed(other._signed)
 {
@@ -25,13 +23,11 @@ bool Form::getSigned() const { return _signed; }
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-    if (bureaucrat.getGrade() > signGrade)
-    {
-        bureaucrat.signForm(*this);
-        throw GradeTooLowException();
-    }
+    if (_signed)
+        throw Form::alreadySignedException();
+    if (signGrade < bureaucrat.getGrade())
+        throw Form::GradeTooLowException();
     _signed = true;
-    bureaucrat.signForm(*this);
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &f)

@@ -3,19 +3,20 @@
 
 int main()
 {
-    try
-    {
-      Form a ("test", 100, 134);
-      Form b = a;
-      Bureaucrat max ("Max", 101);
-      a.beSigned(max);
-      std::cout << std::string(20, '-') << std::endl;
-      std::cout << b << std::endl;
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << MAGENTA << e.what() <<  RESET << std::endl;
-    }
+  try
+  {
+    Form a("test", 100, 100);
 
-    return 0;
+    Bureaucrat max("Max", 101);
+    Bureaucrat tonton("tonton", 100);
+    max.signForm(a);
+    tonton.signForm(a);
+    tonton.signForm(a);
+  }
+  catch (const std::exception &e)
+  {
+    std::cerr << MAGENTA << e.what() << RESET << std::endl;
+  }
+
+  return 0;
 }
