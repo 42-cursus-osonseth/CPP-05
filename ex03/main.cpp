@@ -5,31 +5,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 
-// int main()
-// {
-
-//   try
-//   {
-//     Bureaucrat max("Max", 0);
-//     Bureaucrat tonton("tonton", 5);
-//     AForm *a = new RobotomyRequestForm("test");
-    
-
-//     tonton.signForm(*a);
-//     tonton.executeForm(*a);
-
-
-//     delete a;
-//   }
-//   catch (const std::exception &e)
-//   {
-//     std::cerr << MAGENTA << e.what() << RESET << std::endl;
-//   }
-
-//   return 0;
-// }
-
-int main ()
+int main()
 {
   try
   {
@@ -40,7 +16,14 @@ int main ()
     std::cout << *test << std::endl;
     std::cout << *test1 << std::endl;
     std::cout << *test2 << std::endl;
-    AForm *test3 = max.makeForm("TONTON", "shrubbery ");
+    AForm *test3 = max.makeForm("TONTON", "Wrong name");
+    Bureaucrat b("tonton", 1);
+    b.signForm(*test);
+    b.signForm(*test1);
+    b.signForm(*test2);
+    b.executeForm(*test);
+    b.executeForm(*test1);
+    b.executeForm(*test2);
     delete test;
     delete test1;
     delete test2;

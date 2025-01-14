@@ -1,5 +1,5 @@
 #ifndef INTERN_HPP
-#define INTERNE_HPP
+#define INTERN_HPP
 
 #include <string>
 
